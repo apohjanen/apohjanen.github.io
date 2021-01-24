@@ -1,0 +1,113 @@
+// This CSS file can be used as a starting point for slider styles
+// All backgrounds are used for testing only
+
+// Slider dimmensions
+$ms-container-length: 400px;
+$ms-slide-width: 90px;
+$ms-slide-height: 90px;
+
+// Slider container
+.ms-container {
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  // Just for testing the current slide position (centered)
+  &:before {
+    content: '';
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 100%;
+  }
+}
+
+// Styles for horizontal slider
+.ms-container--horizontal {
+  width: $ms-container-length;
+  height: $ms-slide-height;
+  max-width: 100%;
+
+  &:before {
+    left: calc(50% - #{$ms-slide-width / 2});
+    top: 0;
+    width: $ms-slide-width;
+    height: 100%;
+  }
+
+  // Centering slider track horizontally, to get current slide centered
+  .ms-track {
+    left: calc(50% - #{$ms-slide-width / 2});
+  }
+
+  // Reverse styles
+  &.ms-container--reverse .ms-track {
+    flex-direction: row-reverse;
+    left: auto;
+    right: calc(50% - #{$ms-slide-width / 2});
+  }
+
+  // Positioning slides horizontally
+  .ms-slide {
+    display: inline-flex;
+  }
+}
+
+// Styles for vertical slider
+.ms-container--vertical {
+  width: $ms-slide-width;
+  height: $ms-container-length;
+  max-height: 100%;
+
+  &:before {
+    left: 0;
+    top: calc(50% - #{$ms-slide-height / 2});
+    width: 100%;
+    height: $ms-slide-height;
+  }
+
+  // Centering slider track vertically, to get current slide centered
+  .ms-track {
+    flex-direction: column;
+    top: calc(50% - #{$ms-slide-height / 2});
+  }
+
+  // Reverse styles
+  &.ms-container--reverse .ms-track {
+    flex-direction: column-reverse;
+    top: auto;
+    bottom: calc(50% - #{$ms-slide-height / 2});
+  }
+
+  // Positioning slides vertically
+  .ms-slide {
+    display: flex;
+  }
+}
+
+// Slider track
+.ms-track {
+  display: flex;
+  position: absolute;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+// Slides
+.ms-slide {
+  align-items: center;
+  justify-content: center;
+  width: $ms-slide-width;
+  height: $ms-slide-height;
+  user-select: none;
+
+  // A testing backgrounds for slides
+  &:nth-child(2n) {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  &:nth-child(2n + 1) {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
