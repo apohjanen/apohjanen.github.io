@@ -576,6 +576,7 @@ ul#nav li.current a { color: #F06000; }
    letter-spacing: 3px;
    cursor: pointer;
 }
+.popup-modal a {	color: #000000; }
 .popup-modal a:hover {	color: #00CCCC; }
 .popup-modal a.popup-modal-dismiss { margin-left: 24px; }
 
