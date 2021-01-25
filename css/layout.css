@@ -22,9 +22,13 @@
 /* a. General Styles
 /* ------------------------------------------------------------------ */
 
+html, body {
+overflow-x: hidden;
+}
+
 body { 
 background: #0f0f0f; 
-overflow-x: hidden;
+position: relative;
 }
 
 /* ------------------------------------------------------------------ */
