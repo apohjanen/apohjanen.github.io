@@ -38,18 +38,25 @@
         interactive: false
     });
 
-	var links = [
+	/*var links = [
 		'https://play.google.com/store/apps/details?id=com.superplusgames.brawlsofsteel&hl=en_NZ&gl=US',
 		'https://play.google.com/store/apps/details?id=com.superplusgames.tapandspin&hl=en_NZ&gl=US',
 		'https://play.google.com/store/apps/details?id=com.EndlessTea.Gravitoid'
+    ];*/
+	
+	var links = [
+		'https://youtu.be/HVirhJNAJsw',
+		'https://youtu.be/79J5Ki-vcFY',
+		'https://youtu.be/Cra66S1nWp0'
     ];
+	
 	// Initializing the links slider
     var msLinks = new MomentumSlider({
         el: slidersContainer,
         cssClass: 'ms--links',
         range: [0, 2],
         rangeContent: function (i) {
-			return '<a href="' + links[i] + '"target="_blank" rel="noopener noreferrer">Show on Google Play Store</a>';
+			return '<a href="' + links[i] + '"target="_blank" rel="noopener noreferrer">Show trailer on Youtube</a>';
             //return '<a class="ms-slide__link">Show on Store</a>';
         },
         vertical: true,
